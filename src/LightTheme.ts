@@ -1,9 +1,9 @@
 import { BaseThemeLight } from "./Theme";
 
 export class LightTheme extends BaseThemeLight {
-  colorBG0 = this.hsl(0, 0, 94);
-  colorBG1 = this.hsl(0, 0, 90);
-  colorBG2 = this.hsl(0, 0, 82);
+  colorBG0 = this.hsl(0, 0, 90);
+  colorBG1 = this.hsl(0, 0, 86);
+  colorBG2 = this.hsl(0, 0, 78);
   colorFG = this.hsl(0, 0, 20);
 
   colorSubtle = this.hsl(320, 40, 40);
@@ -15,5 +15,5 @@ export class LightTheme extends BaseThemeLight {
   colorBorder1 = this.hsl(0, 0, 40);
   colorStatusBG = this.colorFG;
   colorStatusFG = this.colorBG0;
-  colorWidgetBG = this.hsl(0, 0, 98);
+  colorWidgetBG = this.hsl(0, 0, 94);
 }
