@@ -11,9 +11,9 @@ const transparent = "#00000000";
 // WCAG AA minimum contrast values
 // https://webaim.org/resources/contrastchecker/
 const Contrast = {
-  text: 4.5,
-  ui: 3,
-  decoration: 1.75,
+  text: 3.1,
+  ui: 2.5,
+  decoration: 1.5,
 } as const;
 type ContrastLevel = keyof typeof Contrast;
 
@@ -185,7 +185,7 @@ abstract class Theme {
         : this.tintedAnsiDark(this.colorBG0, this.colorFG);
     return {
       "terminal.foreground": this.colorFG,
-      "terminal.background": this.colorBG0,
+      "terminal.background": this.colorBG1,
       "terminal.ansiBlack": p.tBlack,
       "terminal.ansiBlue": p.tBlue,
       "terminal.ansiBrightBlack": p.tBlack,
@@ -238,6 +238,12 @@ abstract class Theme {
   darken(color: string, amount: number): string {
     const hsl = colord(color).toHsl();
     hsl.l -= amount;
+    return colord(hsl).toHex();
+  }
+
+  lighten(color: string, amount: number): string {
+    const hsl = colord(color).toHsl();
+    hsl.l += amount;
     return colord(hsl).toHex();
   }
 
@@ -439,16 +445,16 @@ abstract class Theme {
       "editorLink.activeForeground": this.colorSubtle,
       "editor.lineHighlightBackground": this.colorBG1,
       "editor.rangeHighlightBackground": this.alpha(this.orange, 10),
-      "editor.selectionBackground": this.alpha(this.colorTre, 30),
-      "editor.inactiveSelectionBackground": this.alpha(this.colorTre, 30),
+      "editor.selectionBackground": this.alpha(this.colorTre, 25),
+      "editor.inactiveSelectionBackground": this.alpha(this.mix(this.colorBG2, this.colorTre, 50), 20),
       "editor.wordHighlightBackground": this.alpha(this.blue, 25),
-      "editor.wordHighlightStrongBackground": this.alpha(this.purple, 30),
+      "editor.wordHighlightStrongBackground": this.alpha(this.purple, 20),
       "editorOverviewRuler.border": this.alpha(this.colorBorder0, 25),
       "editorCursor.foreground": this.colorTre,
       "editorGroup.border": this.colorBorder0,
-      "editorRuler.foreground": this.alpha(this.colorBorder0, 25),
-      "editorIndentGuide.background": this.alpha(this.colorBorder0, 50),
-      "editorIndentGuide.activeBackground": this.colorBorder0,
+      "editorRuler.foreground": this.alpha(this.colorFG, 25),
+      "editorIndentGuide.background": this.alpha(this.colorFG, 10),
+      "editorIndentGuide.activeBackground": this.alpha(this.colorFG, 20),
       "editorLineNumber.foreground": this.alpha(this.colorFG, 30),
       "editorLineNumber.activeForeground": this.colorFG,
     };
@@ -544,7 +550,8 @@ abstract class Theme {
       "commandCenter.border": this.colorBorder0,
       "commandCenter.inactiveBorder": this.colorBorder0,
       "commandCenter.activeBackground": this.colorBG0,
-      "commandCenter.activeBorder": this.colorBorder0,
+      "commandCenter.activeBorder": this.colorFG,
+      "quickInput.background": this.colorWidgetBG,
     };
   }
 

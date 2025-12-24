@@ -23,6 +23,11 @@
 				"path": "./themes/light-color-theme.json"
 			},
 			{
+				"label": "Uno Due Tre (Newsprint)",
+				"uiTheme": "vs",
+				"path": "./themes/newsprint-color-theme.json"
+			},
+			{
 				"label": "Uno Due Tre (Dark)",
 				"uiTheme": "vs-dark",
 				"path": "./themes/dark-color-theme.json"
