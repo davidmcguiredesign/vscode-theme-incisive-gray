@@ -11,7 +11,7 @@ const transparent = "#00000000";
 // WCAG AA minimum contrast values
 // https://webaim.org/resources/contrastchecker/
 const Contrast = {
-  text: 3.1,
+  text: 2.8,
   ui: 2.5,
   decoration: 1.5,
 } as const;
