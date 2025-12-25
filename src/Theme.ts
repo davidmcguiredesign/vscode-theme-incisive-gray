@@ -28,9 +28,9 @@ function sortedObject<T>(obj: Record<string, T>) {
 }
 
 interface Style {
-  foreground: string;
+  foreground?: string;
   background?: string;
-  fontStyle: string;
+  fontStyle?: string;
 }
 
 export type ThemeType = "light" | "dark";
@@ -752,8 +752,15 @@ abstract class Theme {
         ],
       },
       {
-        name: "Uno2Italic",
-        settings: this.style(this.colorUno, "italic"),
+        name: "Uno1Unbold",
+        settings: this.style(this.colorUno, ''),
+        scopes: [
+          "storage.modifier"
+        ]
+      },
+      {
+        name: "italic (markdown)",
+        settings: this.style(null, "italic"),
         scopes: [
           // Italic
           "markup.italic",
@@ -819,6 +826,13 @@ abstract class Theme {
         ],
       },
       {
+        name: "Due1Italic",
+        settings: this.style(null, "italic"),
+        scopes: [
+          "entity.other.alias"
+        ]
+      },
+      {
         name: "Due1Bold",
         settings: this.style(this.colorDue, "bold"),
         scopes: [
@@ -867,11 +881,19 @@ abstract class Theme {
       .filter((x) => x.scope);
   }
 
-  private style(color: string, ...fontStyle: string[]): Style {
-    return {
+  private style(color: string|null, ...fontStyle: string[]): Style {
+    if (color !== null && fontStyle.length) return {
       foreground: color,
       fontStyle: fontStyle.join(" "),
     };
+
+    if (color !== null) return {
+      foreground: color,
+    }
+    
+    return {
+      fontStyle: fontStyle.join(" "),
+    }
   }
 
   private showContrast(
