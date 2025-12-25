@@ -430,6 +430,10 @@ abstract class Theme {
 
   private themeEditor() {
     return {
+      "editorInlayHint.background": transparent,
+      "editorStickyScroll.background": this.alpha(this.colorBG0, 75),
+      "editorStickyScroll.border": this.alpha(this.colorBorder0, 20),
+      "editorStickyScrollGutter.background": this.alpha(this.colorBG0, 75),
       "editorWidget.foreground": this.colorFG,
       "editorWidget.background": this.colorBG1,
       "editorWidget.border": this.colorBorder0,
@@ -472,20 +476,21 @@ abstract class Theme {
 
   private themeTabs() {
     return {
-      "tab.border": this.colorBG1,
+      "tab.border": this.colorBG2,
       "editorGroupHeader.tabsBorder": this.colorBorder0,
-      "editorGroupHeader.border": this.colorBorder0,
+      "editorGroupHeader.border": this.colorBG2,
       "breadcrumb.background": this.colorBG0,
       "editorGroupHeader.noTabsBackground": this.colorBG1,
       "editorGroupHeader.tabsBackground": this.colorBG1,
-      "tab.activeBorder": this.colorBorder1,
-      "tab.unfocusedActiveBorder": this.colorBorder1,
-      "tab.activeBorderTop": undefined,
-      "tab.unfocusedActiveBorderTop": undefined,
-      "tab.activeBackground": this.colorBG2,
+      "tab.activeBackground": this.colorBG0,
+      "tab.activeBorder": this.colorBG0,
+      "tab.activeBorderTop": this.lighten(this.colorBG0, 8),
       "tab.activeForeground": this.colorFG,
-      "tab.inactiveBackground": this.colorBG1,
+      "tab.inactiveBackground": transparent,
       "tab.inactiveForeground": this.alpha(this.colorFG, 80),
+      "tab.unfocusedActiveBackground": this.mix(this.colorBG1, this.colorBG0, 40),
+      "tab.unfocusedActiveBorder": this.alpha(this.mix(this.colorBG1, this.colorBG0, 50), 50),
+      "tab.unfocusedActiveBorderTop": transparent,
     };
   }
 
