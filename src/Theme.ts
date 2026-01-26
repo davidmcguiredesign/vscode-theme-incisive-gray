@@ -132,20 +132,20 @@ abstract class Theme {
   private themeNotifications() {
     return {
       // Notification Center border color.
-      "notificationCenter.border": undefined,
+      "notificationCenter.border": this.colorBorder1,
       // Notification Center header foreground color.
       "notificationCenterHeader.foreground": this.colorFG,
       // Notification Center header background color.
-      "notificationCenterHeader.background": this.colorBG1,
+      "notificationCenterHeader.background": this.colorBG2,
       // Notification toast border color.
-      "notificationToast.border": this.colorBorder0,
+      "notificationToast.border": this.colorBorder1,
       // Notifications foreground color.
       "notifications.foreground": this.colorFG,
       // Notifications background color.
-      "notifications.background": this.colorBG1,
+      "notifications.background": this.colorBG2,
       // Notifications border color separating from other notifications in
       // the Notification Center.
-      "notifications.border": undefined,
+      "notifications.border": transparent,
       // Notification links foreground color.
       "notificationLink.foreground": this.colorSubtle,
     };
@@ -175,6 +175,7 @@ abstract class Theme {
       "quickInputList.focusBackground": this.colorFG,
 
       "list.hoverBackground": this.alpha(this.colorFG, 5),
+      "widget.border": this.colorBorder1,
     };
   }
 
@@ -447,9 +448,11 @@ abstract class Theme {
       "editorInlayHint.background": transparent,
       "editorStickyScroll.background": this.alpha(this.colorBG0, 75),
       "editorStickyScroll.border": this.alpha(this.colorBorder0, 20),
+      "editorStickyScroll.hoverBackground": this.alpha(this.lighten(this.colorBG0, 20), 5),
       "editorStickyScrollGutter.background": this.alpha(this.colorBG0, 75),
+      "editorSuggestWidget.background": this.colorBG2,
       "editorWidget.foreground": this.colorFG,
-      "editorWidget.background": this.colorBG1,
+      "editorWidget.background": this.colorWidgetBG,
       "editorWidget.border": this.colorBorder0,
       "editorWidget.resizeBorder": this.colorBorder1,
       "editorBracketMatch.background": this.alpha(this.colorTre, 15),
@@ -516,14 +519,14 @@ abstract class Theme {
       "toolbar.activeBackground": this.alpha(this.colorFG, 15),
       "widget.shadow":
         this.themeType === "light"
-          ? this.alpha(this.colorFG, 50)
-          : this.alpha(this.darken(this.colorBG1, 5), 50),
+          ? this.alpha(this.colorFG, 20)
+          : this.alpha(this.darken(this.colorBG0, 5), 30),
       ...this.themeScrollbar(),
       "input.border": this.colorBorder1,
-      "input.background": this.colorWidgetBG,
+      "input.background": this.lighten(this.colorBG0, 5),
       "input.placeholderForeground": this.alpha(this.colorFG, 40),
       "progressBar.background": this.colorFG,
-      "inputOption.activeBorder": this.colorFG,
+      "inputOption.activeBorder": this.alpha(this.colorTre, 40),
       ...this.themeCommandCenter(),
       ...this.themeList(),
       ...this.themeStatusBar(),
@@ -537,7 +540,7 @@ abstract class Theme {
       ...this.themeDragAndDrop(),
       ...this.themeButton(),
       foreground: this.colorFG,
-      "panel.background": this.colorBG0,
+      "panel.background": this.colorBG1,
       "panel.border": this.colorBorder0,
       "panelTitle.activeBorder": this.alpha(this.colorFG, 50),
       "panelTitle.activeForeground": this.colorFG,
