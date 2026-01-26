@@ -645,32 +645,45 @@ abstract class Theme {
         scopes: ["source.diff"],
       },
       {
-        name: "Default",
+        name: "Default (userland keywords)",
         settings: this.style(this.colorFG),
         scopes: [
-          // Function call
           "meta.function-call entity.name.function",
-          "source.go entity.name.function",
           "meta.property-name.css",
+          "entity.name.function",
+          "variable.other",
+          "constant.other",
+          "meta.attribute.unrecognized entity.other.attribute-name.html",
+          "support.attribute.php",
         ],
       },
       {
-        name: "Uno1",
+        name: "Wayfinding (userland definitions)",
+        "settings": this.style(this.colorFG, 'bold'),
+        "scopes": [
+          "meta.class meta.function entity.name.function",
+          "meta.function entity.name.function",
+          "entity.name.type.class",
+        ],
+      },
+      {
+        name: "Uno1 (language syntax)",
         settings: this.style(this.colorUno),
         scopes: [
           // Operators
           "keyword.operator",
           "storage.type.function.arrow",
+          "storage.modifier",
         ],
       },
       {
-        name: "Tre1",
+        name: "Tre1 (strings)",
         settings: this.style(this.colorTre),
         scopes: [
           // Strings
           "string",
-          "punctuation.definition.string",
           "support.constant.property-value",
+          "meta.object-literal.key",
         ],
       },
       {
@@ -682,13 +695,9 @@ abstract class Theme {
           "markup.inline",
           "punctuation.definition.markdown",
 
-          // Object keys
-          "support.type.property-name.json",
+          // Properties
           "meta.object-literal.key",
-
-          // CSS properties
           "meta.property-name",
-
           // Interpolation stuff
           "variable.interpolation",
 
@@ -715,7 +724,7 @@ abstract class Theme {
         ],
       },
       {
-        name: "Uno3",
+        name: "Subtle (context)",
         settings: this.style(this.colorSubtle),
         scopes: [
           // Escape characters
@@ -729,6 +738,7 @@ abstract class Theme {
           "punctuation.terminator",
           "punctuation.accessor",
           "keyword.generator.asterisk",
+          "meta.attribute.id.html string.quoted",
 
           // Punctuation
           "punctuation.other.comma",
@@ -755,15 +765,11 @@ abstract class Theme {
           "keyword.var",
           "keyword.other",
           "keyword.type",
-
+          "punctuation.section.embedded",
+          
           // Storage (var)
           "storage",
-        ],
-      },
-      {
-        name: "Uno2Bold",
-        settings: this.style(this.colorUno, "bold"),
-        scopes: [
+          
           // Bold
           "markup.bold",
           "punctuation.definition.bold",
@@ -792,20 +798,17 @@ abstract class Theme {
         name: "Due1",
         settings: this.style(this.colorDue),
         scopes: [
-          // Symbols
-          "constant.other.symbol",
-
-          // Numbers
-          "constant.numeric",
-
-          // Boolean
-          "constant.language.boolean",
-
           // Constants
           "constant",
+          "constant.other.symbol",
+          "constant.numeric",
+          "constant.language.boolean",
           "support.constant",
+          "support.class.builtin",
           "variable.language",
           "variable.argument.css",
+          "keyword.other.type",
+          "keyword.operator.nullable-type",
 
           // Attributes
           "entity.other.attribute-name",
@@ -839,6 +842,7 @@ abstract class Theme {
 
           // Shell builtins
           "support.function.builtin.shell",
+          "support.function",
 
           // Lists
           "beginning.punctuation.definition.list",
@@ -846,6 +850,14 @@ abstract class Theme {
           // Colors
           "constant.other.color",
         ],
+      },
+      {
+        name: "Due3 (memory references)",
+        settings: this.style(this.alpha(this.mix(this.colorDue, this.colorFG, 30), 75)),
+        scopes: [
+          'variable.language.this',
+          'punctuation.definition.variable',
+        ]
       },
       {
         name: "Due1Italic",
@@ -865,12 +877,10 @@ abstract class Theme {
           // Functions
           "source.go entity.name.function",
           "meta.definition entity.name.function",
-          "meta.function entity.name.function",
           "meta.require",
 
           // Classes
           "entity.name.class",
-          "entity.name.type.class",
           "entity.name.type.module",
           "entity.other.inherited-class",
         ],
