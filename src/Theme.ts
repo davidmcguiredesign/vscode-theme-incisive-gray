@@ -241,9 +241,16 @@ abstract class Theme {
     return colord(hsl).toHex();
   }
 
+  /**
+   * 
+   * @param color hex color
+   * @param amount percentage difference
+   * @returns 
+   */
   lighten(color: string, amount: number): string {
+    const percent = 1 + (amount / 100);
     const hsl = colord(color).toHsl();
-    hsl.l += amount;
+    hsl.l *= percent;
     return colord(hsl).toHex();
   }
 
@@ -367,6 +374,13 @@ abstract class Theme {
     };
   }
 
+  /**
+   * 
+   * @param a Base color
+   * @param b Color to mix in
+   * @param percent How much of the mix color to use
+   * @returns 
+   */
   private mix(a: string, b: string, percent: number): string {
     return colord(a)
       .mix(b, percent / 100)
@@ -484,7 +498,7 @@ abstract class Theme {
       "editorGroupHeader.tabsBackground": this.colorBG1,
       "tab.activeBackground": this.colorBG0,
       "tab.activeBorder": this.colorBG0,
-      "tab.activeBorderTop": this.lighten(this.colorBG0, 8),
+      "tab.activeBorderTop": this.lighten(this.colorBG0, 10),
       "tab.activeForeground": this.colorFG,
       "tab.inactiveBackground": transparent,
       "tab.inactiveForeground": this.alpha(this.colorFG, 80),
