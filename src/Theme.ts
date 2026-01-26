@@ -645,6 +645,13 @@ abstract class Theme {
         scopes: ["source.diff"],
       },
       {
+        name: "String punctuation",
+        settings: this.style(this.alpha(this.colorTre, 40), 'bold'),
+        scopes: [
+          "punctuation.definition.string",
+        ]
+      },
+      {
         name: "Default (userland keywords)",
         settings: this.style(this.colorFG),
         scopes: [
