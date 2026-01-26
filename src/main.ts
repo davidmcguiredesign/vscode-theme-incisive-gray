@@ -1,22 +1,6 @@
-import { BubbleGumTheme } from "./BubbleGumTheme";
-import { DarkTheme } from "./DarkTheme";
+import { NewsprintDarkTheme } from "./NewsprintDarkTheme";
 import "./extend-colord";
-import { LightTheme } from "./LightTheme";
 import { NewsprintTheme } from "./NewsprintTheme";
-import { MidnightTheme } from "./MidnightTheme";
-import { NatureTheme } from "./NatureTheme";
-import { OceanTheme } from "./OceanTheme";
-import { PeriwinkleTheme } from "./PeriwinkleTheme";
-import { SprinklesTheme } from "./SprinklesTheme";
-import { MiasmaTheme } from "./MiasmaTheme";
 
-new BubbleGumTheme().saveAs("bubblegum");
-new DarkTheme().saveAs("dark");
-new LightTheme().saveAs("light");
+new NewsprintDarkTheme().saveAs("dark");
 new NewsprintTheme().saveAs("newsprint");
-new MidnightTheme().saveAs("midnight");
-new NatureTheme().saveAs("nature");
-new MiasmaTheme().saveAs("miasma");
-new OceanTheme().saveAs("ocean");
-new PeriwinkleTheme().saveAs("periwinkle");
-new SprinklesTheme().saveAs("sprinkles");

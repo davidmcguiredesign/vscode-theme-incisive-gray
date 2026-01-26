@@ -1,6 +1,6 @@
 import { BaseThemeDark } from "./Theme";
 
-export class DarkTheme extends BaseThemeDark {
+export class NewsprintDarkTheme extends BaseThemeDark {
   colorBG0 = this.hsl(0, 0, 20);
   colorBG1 = this.hsl(0, 0, 16);
   colorBG2 = this.hsl(0, 0, 26);

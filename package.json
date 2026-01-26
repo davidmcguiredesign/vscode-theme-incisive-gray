@@ -1,8 +1,8 @@
 {
-	"name": "theme-unoduetre",
-	"displayName": "Uno Due Tre",
-	"description": "A collection of themes with three colors each",
-	"version": "5.11.1",
+	"name": "theme-newsprint",
+	"displayName": "Gently Definite Newsprint",
+	"description": "A light theme that maximizes contrast while minimizing glare and haze",
+	"version": "1.0.0",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/wavebeem/vscode-theme-unoduetre.git"
@@ -18,61 +18,21 @@
 	"contributes": {
 		"themes": [
 			{
-				"label": "Uno Due Tre",
-				"uiTheme": "vs",
-				"path": "./themes/light-color-theme.json"
-			},
-			{
 				"label": "Uno Due Tre (Newsprint)",
 				"uiTheme": "vs",
 				"path": "./themes/newsprint-color-theme.json"
 			},
 			{
-				"label": "Uno Due Tre (Dark)",
+				"label": "Uno Due Tre (Dark Newsprint)",
 				"uiTheme": "vs-dark",
-				"path": "./themes/dark-color-theme.json"
-			},
-			{
-				"label": "Uno Due Tre (Nature)",
-				"uiTheme": "vs",
-				"path": "./themes/nature-color-theme.json"
-			},
-			{
-				"label": "Uno Due Tre (Miasma)",
-				"uiTheme": "vs-dark",
-				"path": "./themes/miasma-color-theme.json"
-			},
-			{
-				"label": "Uno Due Tre (Bubble Gum)",
-				"uiTheme": "vs",
-				"path": "./themes/bubblegum-color-theme.json"
-			},
-			{
-				"label": "Uno Due Tre (Periwinkle)",
-				"uiTheme": "vs",
-				"path": "./themes/periwinkle-color-theme.json"
-			},
-			{
-				"label": "Uno Due Tre (Sprinkles)",
-				"uiTheme": "vs-dark",
-				"path": "./themes/sprinkles-color-theme.json"
-			},
-			{
-				"label": "Uno Due Tre (Midnight)",
-				"uiTheme": "vs-dark",
-				"path": "./themes/midnight-color-theme.json"
-			},
-			{
-				"label": "Uno Due Tre (Ocean)",
-				"uiTheme": "vs-dark",
-				"path": "./themes/ocean-color-theme.json"
+				"path": "./themes/newsprint-dark-color-theme.json"
 			}
 		]
 	},
 	"bugs": {
-		"url": "https://github.com/wavebeem/vscode-theme-unoduetre/issues"
+		"url": "https://github.com/davidmcguiredesign/vscode-theme-incisive-gray/issues"
 	},
-	"homepage": "https://github.com/wavebeem/vscode-theme-unoduetre#readme",
+	"homepage": "https://github.com/davidmcguiredesign/vscode-theme-incisive-gray#readme",
 	"scripts": {
 		"upgrade": "npm-check -u",
 		"build": "ts-node src/main.ts",
