@@ -7,9 +7,9 @@ export class DarkTheme extends BaseThemeDark {
   colorFG = this.hsl(0, 0, 90);
 
   colorSubtle = this.hsl(70, 10, 62);
-  colorUno = this.hsl(70, 60, 65);
-  colorDue = this.hsl(175, 60, 65);
-  colorTre = this.hsl(30, 80, 65);
+  colorUno = this.hsl(30, 80, 65);
+  colorDue = this.hsl(190, 55, 70);
+  colorTre = this.hsl(80, 50, 65);
 
   colorBorder0 = this.hsl(0, 0, 30);
   colorBorder1 = this.hsl(0, 0, 58);
