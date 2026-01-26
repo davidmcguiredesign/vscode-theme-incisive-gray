@@ -1,3 +1,35 @@
 {
-  "editor.formatOnSave": true
+	"editor.formatOnSave": true,
+	"editor.tokenColorCustomizations": {
+		"[Uno Due Tre (Newsprint)]": {
+			"textMateRules": [
+				/* {
+          "name": "userland class declarations",
+          "settings": {
+            "foreground": "#FF0000",
+            "fontStyle": "bold underline"
+          },
+          "scope": "meta.class meta.function entity.name.function, meta.function entity.name.function"
+        }, */
+			]
+		}
+	},
+	"workbench.colorCustomizations": {
+		"[Uno Due Tre (Newsprint)]": {
+			// "editorGroupHeader.border": "#a8a8a8",
+			// "tab.inactiveBackground": "#00000000",
+			// "tab.unfocusedActiveBackground": "#d4d4d499",
+			// "tab.unfocusedActiveBorder": "#d4d4d466",
+			// "tab.activeBorderTop": "#e0e0e0",
+			// "tab.unfocusedActiveBorderTop": "#00000000",
+			// "editorInlayHint.background": "#f000",
+			// "editorStickyScroll.background": "#d4d4d4bf",
+			// "editorStickyScroll.border": "#9993",
+			// "editorStickyScrollGutter.background": "#d4d4d4bf",
+			// "contrastBorder": "#000000",
+			// "inputOption.activeBorder": "#00660966",
+			// "editorWidget.background": "#bbb",
+			// "input.background": "#dddddd"
+		}
+	}
 }
