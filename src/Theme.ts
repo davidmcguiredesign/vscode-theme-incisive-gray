@@ -153,7 +153,7 @@ abstract class Theme {
 
   private themeList() {
     return {
-      "quickInput.background": this.colorBG0,
+      "quickInput.background": this.colorWidgetBG,
 
       "list.errorForeground": this.mix(this.red, this.colorFG, 50),
       "list.warningForeground": this.mix(this.yellow, this.colorFG, 50),
@@ -497,7 +497,7 @@ abstract class Theme {
       "editorGroupHeader.tabsBorder": this.colorBorder0,
       "editorGroupHeader.border": this.colorBG2,
       "breadcrumb.background": this.colorBG0,
-      "editorGroupHeader.noTabsBackground": this.colorBG1,
+      "editorGroupHeader.noTabsBackground": this.colorBG0,
       "editorGroupHeader.tabsBackground": this.colorBG1,
       "tab.activeBackground": this.colorBG0,
       "tab.activeBorder": this.colorBG0,
@@ -567,12 +567,12 @@ abstract class Theme {
   private themeCommandCenter(): Record<string, string | undefined> {
     return {
       "commandCenter.foreground": this.colorFG,
-      "commandCenter.inactiveForeground": this.alpha(this.colorFG, 50),
+      "commandCenter.inactiveForeground": this.alpha(this.colorFG, 40),
       "commandCenter.background": this.colorBG1,
-      "commandCenter.border": this.colorBorder0,
-      "commandCenter.inactiveBorder": this.colorBorder0,
-      "commandCenter.activeBackground": this.colorBG0,
-      "commandCenter.activeBorder": this.colorFG,
+      "commandCenter.border": this.alpha(this.colorBorder0, 60),
+      "commandCenter.inactiveBorder": this.alpha(this.colorBorder0, 25),
+      "commandCenter.activeBackground": this.lighten(this.colorBG0, 5),
+      "commandCenter.activeBorder": this.colorTre,
       "quickInput.background": this.colorWidgetBG,
     };
   }
